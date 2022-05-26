@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment"
+    android:background="@color/dark">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="60sp"
+        android:layout_marginRight="60sp"
+        android:text="Hash Generator"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="55sp"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginTop="32sp"
+        app:boxBackgroundColor="@color/dark_blue"
+        app:boxStrokeColor="@color/teal_200"
+        app:endIconTint="#7E7E7E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleText"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:startIconTint="@color/teal_200">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:paddingTop="20sp"
+            android:paddingBottom="20sp"
+            android:text="SHA-256"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="150sp"
+        android:layout_marginTop="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        android:hint="Text here.."
+        android:textColorHint="@android:color/darker_gray"
+        android:gravity="top|start"
+        android:padding="15sp"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:maxLines="10"
+        android:background="@color/dark_blue"
+        android:id="@+id/plainEditText"
+        />
+    <Button
+        android:id="@+id/generateBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20sp"
+        android:textColor="@color/white"
+        android:text="Generate"
+        android:backgroundTint="#0073FF"/>
+
+    <View
+        android:id="@+id/successBackground"
+        android:layout_width="1dp"
+        android:layout_height="2dp"
+        android:alpha="0"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/successImage"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@drawable/ic_check"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="@+id/generateBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
