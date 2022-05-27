@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -35,7 +36,10 @@ class HomeFragment : Fragment() {
 
     private fun onGenerateClicked() {
         if(binding.plainEditText.text.isEmpty()){
-            Snackbar.make(binding.root,"Field empty.",Snackbar.LENGTH_SHORT).setAction("Ok"){}.show()
+            Snackbar.make(binding.root,"Field empty.",Snackbar.LENGTH_SHORT)
+                .setAction("Ok"){}
+                .setActionTextColor(ContextCompat.getColor(requireContext(),R.color.blue))
+                .show()
         }else{
             lifecycleScope.launch {
                 applyAnimation()

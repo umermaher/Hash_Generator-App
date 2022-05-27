@@ -7,21 +7,23 @@
     android:background="@color/dark"
     tools:context=".SuccessFragment">
 
+
+
     <TextView
         android:id="@+id/hashText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="30sp"
+        android:textAlignment="center"
+        android:textColor="@color/teal_200"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/copyBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/teal_200"
-        android:textAlignment="center"
-        android:layout_marginBottom="40sp"
-        tools:text="ef0b9eac657f8d7daf2a479455e666617e3270b89b170b42f0a1084363e082dc"
-        android:layout_marginHorizontal="30sp"
-        android:textSize="28sp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toBottomOf="@+id/copied_message"
+        tools:text="ef0b9eac657f8d7daf2a479455e666617e3270b89b170b42f0a1084363e082dc" />
 
     <ImageView
         android:id="@+id/copyBtn"
@@ -34,5 +36,19 @@
         android:src="@drawable/ic_copy"
         android:padding="10sp"
         android:background="@drawable/copy_btn_bg"/>
+
+    <TextView
+        android:id="@+id/copied_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0073FF"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="Copied!"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
